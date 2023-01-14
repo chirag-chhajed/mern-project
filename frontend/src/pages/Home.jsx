@@ -21,17 +21,18 @@ const Home = () => {
         dispatch({type: 'SET_WORKOUTS', payload: json})
       }
     }
-
-    if (user) {
-      fetchWorkouts()
+    
+      if (user) {
+        fetchWorkouts()
     }
+    
   }, [dispatch, user])
 
   return (
     <div className="home">
       <div className="workouts">
         {workouts && workouts.map((workout) => (
-          <WorkoutDetails key={workout?._id} workout={workout} />
+          <WorkoutDetails key={workout._id} workout={workout} />
         ))}
       </div>
       <WorkoutForm />
